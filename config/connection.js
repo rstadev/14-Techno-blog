@@ -1,7 +1,12 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
+// const User = require('../models/User.js');
+// const Blog = require('../models/Blog')
 
 let sequelize;
+
+// User.sync;
+// Blog.sync;
 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
