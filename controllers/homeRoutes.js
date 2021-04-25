@@ -6,8 +6,6 @@ router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     Blog.findAll({
-      include: [
-        {
           // model: User,
           attributes: [
             'id',
@@ -16,13 +14,11 @@ router.get('/', async (req, res) => {
             'date_created',
             'user_id'
         ],
-        },
-      ],
     }).then(data => {
 
       
       // Serialize data so the template can read it
-      const blogs = blogData.map((blog) => blog.get({ plain: true }));
+      const blogs = data.map((blog) => blog.get({ plain: true }));
       
       // Pass serialized data and session flag into template
       res.render('homepage', { 
