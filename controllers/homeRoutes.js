@@ -3,7 +3,6 @@ const { Blog, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  try {
     // Get all projects and JOIN with user data
     Blog.findAll({
           // model: User,
@@ -11,8 +10,9 @@ router.get('/', async (req, res) => {
             'id',
             'title',
             'description',
-            'date_created',
-            'user_id'
+            // 'date_created',
+            'user_id',
+            'created_at'
         ],
     }).then(data => {
 
@@ -25,13 +25,12 @@ router.get('/', async (req, res) => {
         blogs, 
         logged_in: req.session.logged_in 
       });
-    })
-  } catch (err) {
+    }).catch (err => {
     res.status(500).json(err);
-  }
+  })
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/blog/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
       include: [

@@ -16,12 +16,12 @@ Blog.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(4000),
     },
     date_created: {
       type: DataTypes.DATE,
-      allowNull: false,
       defaultValue: DataTypes.NOW,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -33,10 +33,10 @@ Blog.init(
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'blog',
+    timestamps: false
   }
 );
 
