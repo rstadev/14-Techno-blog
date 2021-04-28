@@ -36,7 +36,7 @@ Blog.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'blog',
-    timestamps: true
+    timestamps: false
   }
 );
 

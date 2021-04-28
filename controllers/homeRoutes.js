@@ -11,8 +11,8 @@ router.get('/', async (req, res) => {
             'title',
             'description',
             // 'date_created',
-            'user_id',
-            'created_at'
+            // 'user_id',
+            // 'created_at'
         ],
     }).then(data => {
 
