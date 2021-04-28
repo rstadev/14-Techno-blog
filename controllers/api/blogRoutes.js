@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
       'id',
       'title',
       'description',
+      // the date_created attribute on Blog does not work as it should right now, might just use timestamps
       // 'date_created',
       'user_id',
       'created_at'

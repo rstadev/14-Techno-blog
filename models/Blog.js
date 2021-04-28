@@ -18,11 +18,11 @@ Blog.init(
     description: {
       type: DataTypes.STRING(4000),
     },
-    date_created: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-      allowNull: false,
-    },
+    // date_created: {
+    //   type: DataTypes.DATE,
+    //   defaultValue: DataTypes.NOW,
+    //   allowNull: false,
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -36,7 +36,7 @@ Blog.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'blog',
-    timestamps: false
+    timestamps: true
   }
 );
 
