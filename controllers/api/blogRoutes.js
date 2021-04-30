@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       // the date_created attribute on Blog does not work as it should right now, might just use timestamps
       // 'date_created',
       'user_id',
-      'created_at'
+      // 'created_at'
     ],
   }).then(data => res.json(data))
     .catch(err => {
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Blog.create({
     title: req.body.title,
     description: req.body.description,
@@ -29,7 +29,7 @@ router.post('/', withAuth, async (req, res) => {
     .then(data => res.json(data)).catch(err => console.log(err));
 });
 
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id',  withAuth, (req, res) => {
   Blog.update(req.body, 
     {
     where: {
@@ -47,7 +47,7 @@ router.put('/:id', withAuth, (req, res) => {
   })
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id',  withAuth, (req, res) => {
   Blog.destroy({
     where: {
       id: req.params.id,
