@@ -1,28 +1,27 @@
 async function newFormHandler (event) {
   event.preventDefault();
 
-  const title = document.querySelector('#blog-name').value.trim();
-
-  const description = document.querySelector('#blog-desc').value.trim();
-
+  const title = document.querySelector("input[name='blog-name']").value;
+  console.log(title);
+  const description = document.querySelector("textarea[name='blog-desc']").value;
+  console.log(description);
   if (title && description) {
     const response = await fetch(`/api/blogs`, {
-      method: 'POST',
-      body: JSON.stringify({ name, description }),
+      method: "POST",
+      body: JSON.stringify({ title, description }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace("/");
     } else {
-      alert('Failed to create project');
+      alert("Failed to create project");
     }
   }
 };
 
-document.querySelector('')
 
 // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute('data-id')) {
@@ -40,9 +39,9 @@ document.querySelector('')
 //   }
 // };
 
-// document
-//   .querySelector('.new-project-form')
-//   .addEventListener('submit', newFormHandler);
+document
+  .querySelector("#new-post-form")
+  .addEventListener("submit", newFormHandler);
 
 // document
 //   .querySelector('.project-list')
