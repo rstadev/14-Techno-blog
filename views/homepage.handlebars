@@ -1,7 +1,7 @@
 <!-- Loop over each object in the projects array -->
 {{#each blogs as |blog| }}
 <div class="row mb-4 project">
-  <ul class="col-md-5">
+  <ul class="col-md-5 unordered">
     <li>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       {{blog.title}}
@@ -14,7 +14,7 @@
 
     </li>
     <li>
-      <h6>This Renders!</h6>
+      {{!-- <h6>This Renders!</h6> --}}
 
     </li>
   </ul>
