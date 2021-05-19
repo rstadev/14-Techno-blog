@@ -24,7 +24,7 @@ router.post('/', withAuth, (req, res) => {
   Blog.create({
     title: req.body.title,
     description: req.body.description,
-    user_id: req.session.user_id
+    // user_id: req.session.user_id
   })
     .then(data => res.json(data)).catch(err => console.log(err));
 });
