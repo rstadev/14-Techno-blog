@@ -5,9 +5,8 @@
     
 
 
-  <!-- Titled description for grading clarity. Will remove after grading -->
   ## Description
-  This project was assigned during the Georgia Tech Full Stack Flex Development Program. The aim of this project was to combine our new backend development knowledge with our previous front end knowledge to create our first full stack app. This app is currently incomplete, as I ran short of time, but eventually I plan to have a fully working tech blog. As of now, blog posting will render on the homepage, but will not currently render as the app has no way of posting to jawsdb. The backend portion of posting is complete, but not the front end. Logging in is also functional.
+  This project was assigned during the Georgia Tech Full Stack Flex Development Program. The aim of this project was to combine our new backend development knowledge with our previous front end knowledge to create our first full stack app. I tried my absolute best with this app. I was even able to get what I would call the main function of the app completed. However, I fail to understand how I can connect the user that created the post to that post, and further to how to render that with each individual post using handlebars.
   <br>
 
   ![ReadMeGen Picture](./public/css/assets/14.png))
