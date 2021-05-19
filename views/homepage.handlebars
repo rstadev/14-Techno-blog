@@ -4,12 +4,17 @@
   <ul class="col-md-5 unordered">
     <li>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{blog.title}}
+      <h3>
+        {{blog.title}}
+      </h3>
+
       {{!-- {{{get_emoji}}} --}}
       {{!-- <a href="/project/{{project.id}}">{{project.name}}</a> --}}
     </li>
     <li>
+      <p>
       {{blog.description}}
+      </p>
       {{!-- {{blog.created_at}} --}}
 
     </li>
